@@ -1,16 +1,25 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
+    <!-- Base application theme (Dark Mode) -->
     <style name="Theme.Samiyura" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
+        <!-- Primary brand color (Teal - slightly lighter for dark mode) -->
+        <item name="colorPrimary">#4EBABA</item>
+        <item name="colorPrimaryVariant">#2E8B8B</item>
+        <item name="colorOnPrimary">#000000</item>
+
+        <!-- Secondary brand color (Pink - slightly adjusted for dark mode) -->
+        <item name="colorSecondary">#e7a5a5</item>
+        <item name="colorSecondaryVariant">#d79595</item>
+        <item name="colorOnSecondary">#000000</item>
+
+        <!-- Surface colors (Darker green for dark mode) -->
+        <item name="colorSurface">#7BAF7B</item>
+        <item name="colorOnSurface">#000000</item>
+
+        <!-- Background colors -->
+        <item name="android:colorBackground">#1E5F5F</item>
+        <item name="colorOnBackground">#FFFFFF</item>
+
+        <!-- Status bar color -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
     </style>
 </resources>

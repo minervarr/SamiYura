@@ -5,9 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#22a68e"
+    android:background="?attr/colorPrimary"
     tools:context=".MainActivity">
 
+    <!-- HEADER SECTION -->
     <TextView
         android:id="@+id/header_title"
         android:layout_width="wrap_content"
@@ -15,20 +16,210 @@
         android:text="@string/header_plants"
         android:textSize="32sp"
         android:textStyle="bold"
-        android:textColor="#000000"
+        android:textColor="?attr/colorOnPrimary"
+        android:fontFamily="@font/lmroman_font_family"
         android:layout_marginTop="24dp"
         android:layout_marginStart="24dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/sample_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/test_text"
-        android:textColor="#000000"
+    <!-- Menu icon -->
+    <ImageView
+        android:id="@+id/menu_icon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/menu_description"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- LEFT NAVIGATION ARROW -->
+    <ImageView
+        android:id="@+id/arrow_left"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@string/previous_plant"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintTop_toTopOf="@id/central_card"
+        app:layout_constraintBottom_toBottomOf="@id/central_card"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- RIGHT NAVIGATION ARROW -->
+    <ImageView
+        android:id="@+id/arrow_right"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/next_plant"
+        android:src="@drawable/ic_launcher_foreground"
+        app:layout_constraintTop_toTopOf="@id/central_card"
+        app:layout_constraintBottom_toBottomOf="@id/central_card"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- CENTRAL CARD -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/central_card"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        app:cardBackgroundColor="?attr/colorSurface"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="#000000"
         app:layout_constraintTop_toBottomOf="@id/header_title"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_margin="24dp" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <!-- PLANT NAME -->
+            <TextView
+                android:id="@+id/plant_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_plant_name"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface"
+                android:fontFamily="@font/lmroman_font_family"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- PLANT IMAGE -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/plant_image_container"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="24dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="2dp"
+                app:strokeColor="#000000"
+                app:layout_constraintTop_toBottomOf="@id/plant_name"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <ImageView
+                    android:id="@+id/plant_avatar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/plant_avatar_description"
+                    android:src="@drawable/ic_launcher_foreground"
+                    android:padding="8dp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- FIRST ACTION ROW -->
+            <TextView
+                android:id="@+id/label_i_want"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_i_want"
+                android:textSize="16sp"
+                android:textColor="?attr/colorOnSurface"
+                android:fontFamily="@font/lmroman_font_family"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintTop_toBottomOf="@id/plant_image_container"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <!-- Water Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_water"
+                app:iconTint="@null"
+                style="@style/Theme.Samiyura.PinkImageButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/water_plant"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:icon="@drawable/ic_launcher_foreground"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:layout_constraintTop_toTopOf="@id/label_i_want"
+                app:layout_constraintBottom_toBottomOf="@id/label_i_want"
+                app:layout_constraintEnd_toStartOf="@id/button_sun" />
+
+            <!-- Sun Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_sun"
+                app:iconTint="@null"
+                style="@style/Theme.Samiyura.PinkImageButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/give_sunlight"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:icon="@drawable/ic_launcher_foreground"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:layout_constraintTop_toTopOf="@id/label_i_want"
+                app:layout_constraintBottom_toBottomOf="@id/label_i_want"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- SECOND ACTION ROW -->
+            <TextView
+                android:id="@+id/label_plant_analysis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="44dp"
+                android:fontFamily="@font/lmroman_font_family"
+                android:text="@string/label_plant_analysis"
+                android:textColor="?attr/colorOnSurface"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_i_want" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_analysis"
+                app:iconTint="@null"
+                style="@style/Theme.Samiyura.PinkImageButton"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/analyze_plant"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:icon="@drawable/ic_launcher_foreground"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:layout_constraintTop_toTopOf="@id/label_plant_analysis"
+                app:layout_constraintBottom_toBottomOf="@id/label_plant_analysis"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <!-- FOOTER INFO BUTTON -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_info"
+                style="@style/Theme.Samiyura.PinkButton"
+                android:layout_width="250dp"
+                android:layout_height="60dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/button_info_text"
+                android:textSize="14sp"
+                android:fontFamily="@font/lmroman_font_family"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,5 +3,14 @@
     <string name="plant_status_message">Your %1$s is %2$s</string>
     <string name="header_plants">PLANTS</string>
     <string name="menu_description">Menu</string>
-    <string name="test_text">Test</string>
+    <string name="default_plant_name">Rabanito feliz</string>
+    <string name="plant_avatar_description">Plant avatar showing current status</string>
+    <string name="previous_plant">Previous plant</string>
+    <string name="next_plant">Next plant</string>
+    <string name="label_i_want">I want</string>
+    <string name="label_plant_analysis">Plant Analysis</string>
+    <string name="water_plant">Water plant</string>
+    <string name="give_sunlight">Give sunlight</string>
+    <string name="analyze_plant">Analyze plant</string>
+    <string name="button_info_text">All about me and some advices</string>
 </resources>
