@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Samiyura</string>
+    <string name="plant_status_message">Your %1$s is %2$s</string>
 </resources>
