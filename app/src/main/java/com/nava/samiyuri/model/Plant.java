@@ -3,95 +3,200 @@ package com.nava.samiyuri.model;
 import java.util.Date;
 
 /**
- * Plant - Core data model for a single plant in the Samiyura app
+ * Plant - Core data model representing a child's plant "buddy" in the Samiyura app
  * <p>
- * This class represents a real plant that a child is growing, tracking its
- * lifecycle from planting to harvest. It handles:
- * - Growth stage progression based on time
- * - Care scheduling and status
- * - Plant-type specific behaviors (radish vs lettuce)
+ * This class represents a real plant that a child is growing and has given a personal name to,
+ * creating an emotional bond. It tracks the plant's lifecycle from planting to harvest,
+ * handling growth stage progression, care scheduling, and status monitoring.
+ * <p>
+ * The "buddy" concept is central - this isn't just "a plant," it's "Roberto the Radish"
+ * or "Sunny the Lettuce" - a named companion that the child cares for daily.
  */
 public class Plant {
 
-    // PLANT IDENTITY
+    // PLANT IDENTITY & BUDDY RELATIONSHIP
     private long id;                    // Unique identifier for database storage
     private String plantType;           // "radish" or "lettuce"
-    private String childName;           // Child's custom name for this plant
+    private String buddyName;           // Child's chosen name for their plant buddy (e.g., "Roberto")
 
     // LIFECYCLE TRACKING
-    private Date plantingDate;          // When the seed was planted
+    private Date plantingDate;          // When the buddy was planted
     private int growthStage;            // Current growth phase (see constants below)
-    private Date harvestDate;           // Calculated expected harvest date
+    private Date expectedHarvestDate;   // Calculated expected harvest date
 
-    // CARE TRACKING
-    private Date lastWateredDate;       // Last time child watered the plant
-    private Date lastAnalysisDate;      // Last time child did plant analysis
+    // CARE TRACKING & BUDDY STATUS
+    private Date lastWateredDate;       // Last time child watered their buddy
+    private Date lastObservationDate;   // Last time child checked on their buddy
     private String currentStatus;       // "happy", "thirsty", "needs_attention"
 
-    // GROWTH STAGE CONSTANTS - Makes code more readable
-    public static final int STAGE_SEED = 0;        // Just planted
-    public static final int STAGE_SPROUTING = 1;   // First signs of life
-    public static final int STAGE_SEEDLING = 2;    // Small leaves visible
-    public static final int STAGE_GROWING = 3;     // Actively growing
-    public static final int STAGE_MATURE = 4;      // Almost ready
-    public static final int STAGE_HARVEST = 5;     // Ready to harvest!
-
-    // TODO: Add more detailed functionality here
-    // Add this to your Plant.java after the constants:
+    // GROWTH STAGE CONSTANTS - The buddy's life journey
+    public static final int STAGE_SEED = 0;        // Just planted, buddy is sleeping
+    public static final int STAGE_SPROUTING = 1;   // First signs of life!
+    public static final int STAGE_SEEDLING = 2;    // Baby buddy with tiny leaves
+    public static final int STAGE_GROWING = 3;     // Buddy is growing strong
+    public static final int STAGE_MATURE = 4;      // Almost ready for harvest
+    public static final int STAGE_HARVEST = 5;     // Buddy is ready to be harvested!
 
     /**
-     * Constructor - Creates a new plant with basic information
+     * Constructor - Creates a new plant buddy with a personal name
      * <p>
-     * Sets up a new plant with default values and calculates initial schedule
+     * Sets up a new plant buddy with default values and calculates initial schedule.
+     * The child has chosen to grow this type of plant and given it a special name.
+     *
+     * @param plantType The type of plant ("radish" or "lettuce")
+     * @param buddyName The special name the child chose for their plant buddy
      */
-    public Plant(String plantType, String childName) {
+    public Plant(String plantType, String buddyName) {
         this.plantType = plantType;
-        this.childName = childName;
+        this.buddyName = buddyName;
         this.plantingDate = new Date(); // Current date/time
-        this.growthStage = STAGE_SEED;  // Start as seed
-        this.currentStatus = "happy";   // Start happy!
+        this.growthStage = STAGE_SEED;  // Every buddy starts as a seed
+        this.currentStatus = "happy";   // New buddies start happy!
 
-        // TODO: Calculate harvest date based on plant type
-        // TODO: Set up care schedule
+        // Calculate when this buddy will be ready for harvest
+        calculateExpectedHarvestDate();
     }
+
     /**
-     * CORE BEHAVIOR METHODS
-     * These methods handle the plant's lifecycle and care needs
+     * CORE BUDDY CARE METHODS
+     * These methods handle the plant buddy's lifecycle and care needs
      */
 
     /**
-     * Updates the plant's current status based on care history and time
+     * Updates the buddy's current status based on care history and time passed
      * <p>
-     * Checks if plant needs water, attention, or is doing well
-     * Called every time the app opens or user checks on plants
+     * Checks if the buddy needs water, attention, or is doing well.
+     * Called every time the app opens or user checks on their buddies.
      */
-    public void updateStatus() {
+    public void updateBuddyStatus() {
         Date now = new Date();
 
         // Calculate days since last watering
         long daysSinceWater = calculateDaysBetween(lastWateredDate, now);
 
-        // Simple status logic (will expand this later)
-        if (daysSinceWater > 2) {
-            this.currentStatus = "thirsty";
-        } else if (daysSinceWater > 4) {
-            this.currentStatus = "needs_attention";
+        // Simple buddy status logic (will expand this later)
+        if (daysSinceWater > 4) {
+            this.currentStatus = "needs_attention"; // Buddy is really thirsty!
+        } else if (daysSinceWater > 2) {
+            this.currentStatus = "thirsty";         // Buddy needs some water
         } else {
-            this.currentStatus = "happy";
+            this.currentStatus = "happy";           // Buddy is doing great!
         }
 
-        // TODO: Add growth stage progression logic
-        // TODO: Add plant-type specific care requirements
+        // Update growth stage based on time since planting
+        updateGrowthStage();
     }
 
     /**
-     * Records that the child watered their plant
+     * Records that the child watered their plant buddy
      * <p>
-     * Updates care tracking and recalculates plant status
+     * Updates care tracking and recalculates buddy status to reflect the care given.
      */
-    public void waterPlant() {
+    public void waterBuddy() {
         this.lastWateredDate = new Date();
-        updateStatus(); // Recalculate after care
+        updateBuddyStatus(); // Recalculate status after watering
+    }
+
+    /**
+     * Records that the child observed their plant buddy
+     * <p>
+     * Part of the "Observer's Journal" feature where kids check on their buddy's progress.
+     */
+    public void observeBuddy() {
+        this.lastObservationDate = new Date();
+    }
+
+    /**
+     * PLANT LIFECYCLE METHODS
+     * Handle growth progression and harvest scheduling
+     */
+
+    /**
+     * Calculates and updates growth stage based on days since planting
+     * <p>
+     * Uses realistic timelines for radish vs lettuce growth patterns.
+     */
+    public void updateGrowthStage() {
+        int daysSincePlanting = (int) calculateDaysBetween(plantingDate, new Date());
+
+        // Growth timeline depends on plant type
+        if ("radish".equals(plantType)) {
+            // Radish growth timeline (faster growing)
+            if (daysSincePlanting >= 25) {
+                this.growthStage = STAGE_HARVEST;
+            } else if (daysSincePlanting >= 18) {
+                this.growthStage = STAGE_MATURE;
+            } else if (daysSincePlanting >= 10) {
+                this.growthStage = STAGE_GROWING;
+            } else if (daysSincePlanting >= 5) {
+                this.growthStage = STAGE_SEEDLING;
+            } else if (daysSincePlanting >= 2) {
+                this.growthStage = STAGE_SPROUTING;
+            }
+        } else if ("lettuce".equals(plantType)) {
+            // Lettuce growth timeline (slower growing)
+            if (daysSincePlanting >= 45) {
+                this.growthStage = STAGE_HARVEST;
+            } else if (daysSincePlanting >= 30) {
+                this.growthStage = STAGE_MATURE;
+            } else if (daysSincePlanting >= 15) {
+                this.growthStage = STAGE_GROWING;
+            } else if (daysSincePlanting >= 7) {
+                this.growthStage = STAGE_SEEDLING;
+            } else if (daysSincePlanting >= 3) {
+                this.growthStage = STAGE_SPROUTING;
+            }
+        }
+    }
+
+    /**
+     * Calculates expected harvest date based on plant type
+     */
+    private void calculateExpectedHarvestDate() {
+        long plantingTime = plantingDate.getTime();
+        long daysToAdd;
+
+        if ("radish".equals(plantType)) {
+            daysToAdd = 25; // Radishes ready in ~25 days
+        } else {
+            daysToAdd = 45; // Lettuce ready in ~45 days
+        }
+
+        long harvestTime = plantingTime + (daysToAdd * 24 * 60 * 60 * 1000L);
+        this.expectedHarvestDate = new Date(harvestTime);
+    }
+
+    /**
+     * Checks if the buddy is ready for harvest
+     *
+     * @return true if the buddy has reached harvest stage
+     */
+    public boolean isBuddyReadyForHarvest() {
+        return growthStage == STAGE_HARVEST;
+    }
+
+    /**
+     * Gets a friendly description of the buddy's current growth stage
+     *
+     * @return Human-readable description of what's happening with the buddy
+     */
+    public String getGrowthStageDescription() {
+        switch (growthStage) {
+            case STAGE_SEED:
+                return buddyName + " is sleeping as a seed";
+            case STAGE_SPROUTING:
+                return buddyName + " is starting to sprout!";
+            case STAGE_SEEDLING:
+                return buddyName + " has tiny leaves";
+            case STAGE_GROWING:
+                return buddyName + " is growing bigger";
+            case STAGE_MATURE:
+                return buddyName + " is almost ready";
+            case STAGE_HARVEST:
+                return buddyName + " is ready to harvest!";
+            default:
+                return buddyName + " is growing";
+        }
     }
 
     // Helper method for date calculations
@@ -101,54 +206,34 @@ public class Plant {
     }
 
     /**
-     * Basic getters for accessing plant data
+     * GETTERS AND SETTERS
+     * Provide access to buddy data for the UI and database
      */
-    public String getChildName() { return childName; }
-    public String getStatus() { return currentStatus; }
+
+    public long getId() { return id; }
+    public void setId(long id) { this.id = id; }
+
     public String getPlantType() { return plantType; }
+    public void setPlantType(String plantType) { this.plantType = plantType; }
+
+    public String getBuddyName() { return buddyName; }
+    public void setBuddyName(String buddyName) { this.buddyName = buddyName; }
+
+    public Date getPlantingDate() { return plantingDate; }
+    public void setPlantingDate(Date plantingDate) { this.plantingDate = plantingDate; }
+
     public int getGrowthStage() { return growthStage; }
+    public void setGrowthStage(int growthStage) { this.growthStage = growthStage; }
 
-    /**
-     * Basic setters for updating plant state
-     */
-    public void setStatus(String status) { this.currentStatus = status; }
+    public Date getExpectedHarvestDate() { return expectedHarvestDate; }
+    public void setExpectedHarvestDate(Date expectedHarvestDate) { this.expectedHarvestDate = expectedHarvestDate; }
 
-    /**
-     * PLANT LIFECYCLE METHODS
-     * Handle growth progression and scheduling
-     */
+    public Date getLastWateredDate() { return lastWateredDate; }
+    public void setLastWateredDate(Date lastWateredDate) { this.lastWateredDate = lastWateredDate; }
 
-    /**
-     * Calculates and updates growth stage based on days since planting
-     */
-    public void updateGrowthStage() {
-        int daysSincePlanting = (int) calculateDaysBetween(plantingDate, new Date());
+    public Date getLastObservationDate() { return lastObservationDate; }
+    public void setLastObservationDate(Date lastObservationDate) { this.lastObservationDate = lastObservationDate; }
 
-        // Basic timeline (will make this plant-specific later)
-        if (daysSincePlanting >= 25 && plantType.equals("radish")) {
-            this.growthStage = STAGE_HARVEST;
-        } else if (daysSincePlanting >= 15) {
-            this.growthStage = STAGE_MATURE;
-        } else if (daysSincePlanting >= 7) {
-            this.growthStage = STAGE_GROWING;
-        } else if (daysSincePlanting >= 3) {
-            this.growthStage = STAGE_SEEDLING;
-        } else if (daysSincePlanting >= 1) {
-            this.growthStage = STAGE_SPROUTING;
-        }
-    }
-
-    /**
-     * Records plant analysis activity
-     */
-    public void performAnalysis() {
-        this.lastAnalysisDate = new Date();
-    }
-
-    /**
-     * Checks if plant is ready for harvest
-     */
-    public boolean isReadyForHarvest() {
-        return growthStage == STAGE_HARVEST;
-    }
+    public String getCurrentStatus() { return currentStatus; }
+    public void setCurrentStatus(String currentStatus) { this.currentStatus = currentStatus; }
 }

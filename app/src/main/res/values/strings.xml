@@ -1,16 +1,91 @@
 <resources>
+    <!-- APP IDENTITY -->
     <string name="app_name">Samiyura</string>
-    <string name="plant_status_message">Your %1$s is %2$s</string>
-    <string name="header_plants">PLANTS</string>
+
+    <!-- MAIN BUDDY DASHBOARD -->
+    <string name="header_plants">PLANT BUDDIES</string>
+    <string name="buddy_status_message">Your %1$s is %2$s</string>
+    <string name="default_buddy_name">My Little Buddy</string>
+
+    <!-- BUDDY STATUS DESCRIPTIONS -->
+    <string name="status_happy">happy and healthy</string>
+    <string name="status_thirsty">feeling a bit thirsty</string>
+    <string name="status_needs_attention">really needs your care</string>
+    <string name="status_sleeping">sleeping peacefully as a seed</string>
+
+    <!-- BUDDY CARE ACTIONS -->
+    <string name="water_buddy">Water My Buddy</string>
+    <string name="observe_buddy">Check On My Buddy</string>
+    <string name="care_for_buddy">Take Care Of My Buddy</string>
+
+    <!-- NAVIGATION AND UI -->
     <string name="menu_description">Menu</string>
-    <string name="default_plant_name">Rabanito feliz</string>
-    <string name="plant_avatar_description">Plant avatar showing current status</string>
-    <string name="previous_plant">Previous plant</string>
-    <string name="next_plant">Next plant</string>
-    <string name="label_i_want">I want</string>
+    <string name="buddy_avatar_description">Buddy avatar showing current mood</string>
+    <string name="previous_buddy">Previous buddy</string>
+    <string name="next_buddy">Next buddy</string>
+
+    <!-- BUDDY ACTIONS AND ACTIVITIES -->
+    <string name="label_i_want">I want to</string>
     <string name="label_plant_analysis">Plant Analysis</string>
-    <string name="water_plant">Water plant</string>
-    <string name="give_sunlight">Give sunlight</string>
     <string name="analyze_plant">Analyze plant</string>
-    <string name="button_info_text">All about me and some advices</string>
+    <string name="give_sunlight">Give sunlight</string>
+    <string name="check_growth">Check growth</string>
+    <string name="button_info_text">All about my buddy and growing tips</string>
+
+    <!-- BUDDY NAMING CEREMONY (Future Phase 1) -->
+    <string name="welcome_title">Welcome to Your Garden Adventure!</string>
+    <string name="naming_ceremony_title">Name Your Plant Buddy</string>
+    <string name="naming_prompt">What would you like to name your %1$s buddy?</string>
+    <string name="name_hint">Enter a special name</string>
+    <string name="naming_confirm">Perfect! Say hello to %1$s!</string>
+
+    <!-- BUDDY GROWTH STAGES (Future Observer's Journal) -->
+    <string name="stage_seed">%1$s is sleeping as a seed</string>
+    <string name="stage_sprouting">%1$s is starting to sprout!</string>
+    <string name="stage_seedling">%1$s has tiny baby leaves</string>
+    <string name="stage_growing">%1$s is growing bigger and stronger</string>
+    <string name="stage_mature">%1$s is almost ready for harvest</string>
+    <string name="stage_harvest">%1$s is ready to be harvested!</string>
+
+    <!-- PLANT ANALYSIS SURVEY (Observer's Journal) -->
+    <string name="analysis_seed_question">Go check your real plant! Do you see any tiny sprouts coming up from the soil?</string>
+    <string name="analysis_sprouting_question">Look closely at your real %1$s! How many little leaves can you count?</string>
+    <string name="analysis_seedling_question">Check on your real plant! How tall is %1$s now? Use your finger to measure!</string>
+    <string name="analysis_growing_question">Time to analyze! Are %1$s\'s leaves getting bigger?</string>
+    <string name="analysis_mature_question">Look carefully! Is %1$s ready to harvest yet?</string>
+    <string name="analysis_harvest_question">Amazing! %1$s looks ready to harvest! How does it look?</string>
+    <string name="analysis_completed">Great observation! You\'re becoming a real plant scientist!</string>
+
+    <!-- CARE CONFIRMATIONS (Future Actions) -->
+    <string name="watered_confirmation">Great job! %1$s loves the fresh water!</string>
+    <string name="observation_prompt">Take a close look at %1$s. Do you see any changes?</string>
+    <string name="growth_celebration">Amazing! %1$s has grown since yesterday!</string>
+
+    <!-- HARVEST TIME (Future Phase 3) -->
+    <string name="harvest_ready_title">Harvest Time!</string>
+    <string name="harvest_ready_message">%1$s is ready to be harvested. You did an amazing job!</string>
+    <string name="harvest_instructions">Gently pull %1$s from the soil</string>
+    <string name="harvest_celebration">Congratulations! You grew %1$s from a tiny seed!</string>
+
+    <!-- GENTLE CARE REMINDERS (Future Notifications) -->
+    <string name="gentle_reminder_title">Your buddy misses you</string>
+    <string name="gentle_reminder_message">%1$s would love a visit from you today</string>
+    <string name="water_reminder">%1$s is feeling thirsty</string>
+
+    <!-- PLANT TYPE SPECIFIC -->
+    <string name="plant_type_radish">radish</string>
+    <string name="plant_type_lettuce">lettuce</string>
+    <string name="my_radish_buddy">My Radish Buddy</string>
+    <string name="my_lettuce_buddy">My Lettuce Buddy</string>
+
+    <!-- ENCOURAGEMENT AND POSITIVE REINFORCEMENT -->
+    <string name="good_job">Great job!</string>
+    <string name="keep_it_up">Keep taking good care of your buddy!</string>
+    <string name="patient_gardener">You\'re becoming a wonderful gardener!</string>
+    <string name="buddy_loves_you">Your buddy is lucky to have you!</string>
+
+    <!-- ERROR STATES AND GENTLE GUIDANCE -->
+    <string name="buddy_needs_help">Your buddy needs a little help</string>
+    <string name="care_suggestion">Try giving %1$s some water and check again tomorrow</string>
+    <string name="patience_message">Gardens teach us patience. Good things take time!</string>
 </resources>
