@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- APP IDENTITY -->
     <string name="app_name">Samiyura</string>
@@ -32,6 +33,22 @@
     <string name="check_growth">Check growth</string>
     <string name="button_info_text">All about my buddy and growing tips</string>
 
+    <!-- BUDDY CARE FEEDBACK MESSAGES (New MVVM Message System) -->
+    <string name="buddy_watered_message">Great job! %1$s loves the fresh water!</string>
+    <string name="buddy_sunlight_message">%1$s loves the warm sunlight!</string>
+    <string name="buddy_info_message">Your buddy is lucky to have you!</string>
+    <string name="feature_coming_soon">Coming soon!</string>
+
+    <!-- PLANT ANALYSIS QUESTIONS BY GROWTH STAGE (Observer\'s Journal) -->
+    <string name="analysis_seed_question">Go check your real plant! Do you see any tiny sprouts coming up from the soil?</string>
+    <string name="analysis_sprouting_question">Look closely at your real %1$s! How many little leaves can you count?</string>
+    <string name="analysis_seedling_question">Check on your real plant! How tall is %1$s now? Use your finger to measure!</string>
+    <string name="analysis_growing_question">Time to analyze! Are %1$s\'s leaves getting bigger?</string>
+    <string name="analysis_mature_question">Look carefully! Is %1$s ready to harvest yet?</string>
+    <string name="analysis_harvest_question">Amazing! %1$s looks ready to harvest! How does it look?</string>
+    <string name="analysis_default_question">Take a close look at %1$s. Do you see any changes?</string>
+    <string name="analysis_completed">Great observation! You\'re becoming a real plant scientist!</string>
+
     <!-- BUDDY NAMING CEREMONY (Future Phase 1) -->
     <string name="welcome_title">Welcome to Your Garden Adventure!</string>
     <string name="naming_ceremony_title">Name Your Plant Buddy</string>
@@ -39,22 +56,13 @@
     <string name="name_hint">Enter a special name</string>
     <string name="naming_confirm">Perfect! Say hello to %1$s!</string>
 
-    <!-- BUDDY GROWTH STAGES (Future Observer's Journal) -->
+    <!-- BUDDY GROWTH STAGES (Future Observer\'s Journal) -->
     <string name="stage_seed">%1$s is sleeping as a seed</string>
     <string name="stage_sprouting">%1$s is starting to sprout!</string>
     <string name="stage_seedling">%1$s has tiny baby leaves</string>
     <string name="stage_growing">%1$s is growing bigger and stronger</string>
     <string name="stage_mature">%1$s is almost ready for harvest</string>
     <string name="stage_harvest">%1$s is ready to be harvested!</string>
-
-    <!-- PLANT ANALYSIS SURVEY (Observer's Journal) -->
-    <string name="analysis_seed_question">Go check your real plant! Do you see any tiny sprouts coming up from the soil?</string>
-    <string name="analysis_sprouting_question">Look closely at your real %1$s! How many little leaves can you count?</string>
-    <string name="analysis_seedling_question">Check on your real plant! How tall is %1$s now? Use your finger to measure!</string>
-    <string name="analysis_growing_question">Time to analyze! Are %1$s\'s leaves getting bigger?</string>
-    <string name="analysis_mature_question">Look carefully! Is %1$s ready to harvest yet?</string>
-    <string name="analysis_harvest_question">Amazing! %1$s looks ready to harvest! How does it look?</string>
-    <string name="analysis_completed">Great observation! You\'re becoming a real plant scientist!</string>
 
     <!-- CARE CONFIRMATIONS (Future Actions) -->
     <string name="watered_confirmation">Great job! %1$s loves the fresh water!</string>

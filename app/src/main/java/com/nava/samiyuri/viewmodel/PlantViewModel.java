@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModel;
 
 import com.nava.samiyuri.R;
 import com.nava.samiyuri.model.Plant;
+import com.nava.samiyuri.model.BuddyMessageEvent;
+import com.nava.samiyuri.model.BuddyMessageType;
 
 /**
  * PlantViewModel - Business logic layer for plant buddy management (MVVM Pattern)
@@ -14,10 +16,15 @@ import com.nava.samiyuri.model.Plant;
  * between the UI (MainActivity) and the data layer (Plant model). It uses LiveData to
  * provide reactive updates to the UI when plant buddy data changes.
  * <p>
+ * **MVVM MESSAGE SYSTEM**: This ViewModel now properly follows MVVM principles by emitting
+ * structured message events instead of formatted strings. The View layer handles all
+ * string formatting using string resources, enabling proper localization support.
+ * <p>
  * Key responsibilities:
  * - Manage current plant buddy data
  * - Handle care actions (watering, analysis, sunlight)
  * - Calculate and update plant status
+ * - Emit message events for UI feedback
  * - Provide UI-ready data through LiveData
  * - Prepare for future database integration
  * <p>
@@ -41,16 +48,17 @@ public class PlantViewModel extends ViewModel {
     private final MutableLiveData<Integer> plantAvatarResource = new MutableLiveData<>();
 
     /**
-     * User feedback messages for care actions
-     * UI observes this to show encouraging messages when child cares for buddy
+     * **NEW MVVM MESSAGE SYSTEM**: Structured message events instead of formatted strings
+     * <p>
+     * UI observes this to receive message events and format them using string resources.
+     * This replaces the old feedbackMessage LiveData that contained hardcoded strings.
+     * <p>
+     * Benefits:
+     * - Clean separation between business logic (ViewModel) and presentation (View)
+     * - Full localization support through string resources
+     * - Easier testing of ViewModel logic without UI dependencies
      */
-    private final MutableLiveData<String> feedbackMessage = new MutableLiveData<>();
-
-    /**
-     * Plant analysis questions for Observer's Journal
-     * UI observes this to show growth-stage appropriate survey questions
-     */
-    private final MutableLiveData<String> analysisQuestion = new MutableLiveData<>();
+    private final MutableLiveData<BuddyMessageEvent> messageEvent = new MutableLiveData<>();
 
     /**
      * Constructor - Initialize ViewModel with test plant buddy data
@@ -95,8 +103,8 @@ public class PlantViewModel extends ViewModel {
             currentPlant.setValue(plant);
             updatePlantAvatar();
 
-            // Clear any previous feedback messages
-            feedbackMessage.setValue(null);
+            // Clear any previous message events
+            messageEvent.setValue(null);
         }
     }
 
@@ -109,7 +117,7 @@ public class PlantViewModel extends ViewModel {
      * Records that the child watered their plant buddy
      * <p>
      * Updates care tracking, recalculates buddy status, refreshes UI data,
-     * and provides positive feedback to encourage continued care.
+     * and emits a positive feedback message event to encourage continued care.
      */
     public void waterCurrentBuddy() {
         Plant buddy = currentPlant.getValue();
@@ -121,9 +129,13 @@ public class PlantViewModel extends ViewModel {
             currentPlant.setValue(buddy);
             updatePlantAvatar();
 
-            // Provide encouraging feedback
-            String message = "Great job! " + buddy.getBuddyName() + " loves the fresh water!";
-            feedbackMessage.setValue(message);
+            // **NEW**: Emit structured message event instead of hardcoded string
+            // View will format this using buddy_watered_message string resource
+            BuddyMessageEvent event = new BuddyMessageEvent(
+                    BuddyMessageType.BUDDY_WATERED,
+                    buddy.getBuddyName()
+            );
+            messageEvent.setValue(event);
         }
     }
 
@@ -139,9 +151,11 @@ public class PlantViewModel extends ViewModel {
             // Record that child is doing analysis
             buddy.observeBuddy();
 
-            // Generate growth-stage specific question
-            String question = generateAnalysisQuestion(buddy);
-            analysisQuestion.setValue(question);
+            // **NEW**: Emit structured message event for growth-stage specific question
+            // View will format this using appropriate analysis_*_question string resource
+            BuddyMessageType questionType = getAnalysisQuestionType(buddy);
+            BuddyMessageEvent event = new BuddyMessageEvent(questionType, buddy.getBuddyName());
+            messageEvent.setValue(event);
 
             // Update plant data
             currentPlant.setValue(buddy);
@@ -156,8 +170,13 @@ public class PlantViewModel extends ViewModel {
     public void giveSunlightToBuddy() {
         Plant buddy = currentPlant.getValue();
         if (buddy != null) {
-            String message = buddy.getBuddyName() + " loves the warm sunlight!";
-            feedbackMessage.setValue(message);
+            // **NEW**: Emit structured message event instead of hardcoded string
+            // View will format this using buddy_sunlight_message string resource
+            BuddyMessageEvent event = new BuddyMessageEvent(
+                    BuddyMessageType.BUDDY_GOT_SUNLIGHT,
+                    buddy.getBuddyName()
+            );
+            messageEvent.setValue(event);
         }
     }
 
@@ -167,7 +186,10 @@ public class PlantViewModel extends ViewModel {
      * Future: Will provide detailed buddy profile and growth guidance
      */
     public void showBuddyInfo() {
-        feedbackMessage.setValue("Your buddy is lucky to have you!");
+        // **NEW**: Emit structured message event instead of hardcoded string
+        // View will format this using buddy_info_message string resource
+        BuddyMessageEvent event = new BuddyMessageEvent(BuddyMessageType.BUDDY_INFO_SHOWN);
+        messageEvent.setValue(event);
     }
 
     /**
@@ -180,7 +202,10 @@ public class PlantViewModel extends ViewModel {
      * Future: Will load previous buddy from database/collection
      */
     public void showPreviousBuddy() {
-        feedbackMessage.setValue("Previous buddy (coming soon!)");
+        // **NEW**: Emit structured message event instead of hardcoded string
+        // View will format this using feature_coming_soon string resource
+        BuddyMessageEvent event = new BuddyMessageEvent(BuddyMessageType.FEATURE_COMING_SOON);
+        messageEvent.setValue(event);
     }
 
     /**
@@ -189,7 +214,10 @@ public class PlantViewModel extends ViewModel {
      * Future: Will load next buddy from database/collection
      */
     public void showNextBuddy() {
-        feedbackMessage.setValue("Next buddy (coming soon!)");
+        // **NEW**: Emit structured message event instead of hardcoded string
+        // View will format this using feature_coming_soon string resource
+        BuddyMessageEvent event = new BuddyMessageEvent(BuddyMessageType.FEATURE_COMING_SOON);
+        messageEvent.setValue(event);
     }
 
     /**
@@ -246,30 +274,31 @@ public class PlantViewModel extends ViewModel {
     }
 
     /**
-     * Generates growth-stage appropriate analysis questions for Observer's Journal
+     * **NEW**: Determines which analysis question type to emit based on growth stage
      * <p>
-     * Creates questions that require the child to observe their real plant,
-     * making the connection between digital buddy and physical garden.
+     * Maps plant growth stages to appropriate message types that correspond to
+     * specific string resources in strings.xml. This replaces the old method
+     * that generated hardcoded question strings.
      *
-     * @param buddy The plant buddy to generate questions for
-     * @return Question text that requires real plant observation
+     * @param buddy The plant buddy to generate question type for
+     * @return Message type that corresponds to appropriate string resource
      */
-    private String generateAnalysisQuestion(Plant buddy) {
+    private BuddyMessageType getAnalysisQuestionType(Plant buddy) {
         switch (buddy.getGrowthStage()) {
             case Plant.STAGE_SEED:
-                return "Go check your real plant! Do you see any tiny sprouts coming up from the soil?";
+                return BuddyMessageType.ANALYSIS_SEED_QUESTION;
             case Plant.STAGE_SPROUTING:
-                return "Look closely at your real " + buddy.getBuddyName() + "! How many little leaves can you count?";
+                return BuddyMessageType.ANALYSIS_SPROUTING_QUESTION;
             case Plant.STAGE_SEEDLING:
-                return "Check on your real plant! How tall is " + buddy.getBuddyName() + " now? Use your finger to measure!";
+                return BuddyMessageType.ANALYSIS_SEEDLING_QUESTION;
             case Plant.STAGE_GROWING:
-                return "Time to analyze! Are " + buddy.getBuddyName() + "'s leaves getting bigger?";
+                return BuddyMessageType.ANALYSIS_GROWING_QUESTION;
             case Plant.STAGE_MATURE:
-                return "Look carefully! Is " + buddy.getBuddyName() + " ready to harvest yet?";
+                return BuddyMessageType.ANALYSIS_MATURE_QUESTION;
             case Plant.STAGE_HARVEST:
-                return "Amazing! " + buddy.getBuddyName() + " looks ready to harvest! How does it look?";
+                return BuddyMessageType.ANALYSIS_HARVEST_QUESTION;
             default:
-                return "Take a close look at " + buddy.getBuddyName() + ". Do you see any changes?";
+                return BuddyMessageType.ANALYSIS_DEFAULT_QUESTION;
         }
     }
 
@@ -293,17 +322,16 @@ public class PlantViewModel extends ViewModel {
     }
 
     /**
-     * @return LiveData containing user feedback messages for Toast display
+     * **NEW**: Gets the message event LiveData for structured UI feedback
+     * <p>
+     * Replaces the old getFeedbackMessage() and getAnalysisQuestion() methods.
+     * UI observes this single LiveData stream and handles message formatting
+     * based on the message type using appropriate string resources.
+     *
+     * @return LiveData containing structured message events for UI display
      */
-    public LiveData<String> getFeedbackMessage() {
-        return feedbackMessage;
-    }
-
-    /**
-     * @return LiveData containing analysis questions for plant survey display
-     */
-    public LiveData<String> getAnalysisQuestion() {
-        return analysisQuestion;
+    public LiveData<BuddyMessageEvent> getMessageEvent() {
+        return messageEvent;
     }
 
     /**
