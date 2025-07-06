@@ -1,28 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- ========================================== -->
+    <!-- LANGUAGE SELECTION SCREEN STRINGS         -->
+    <!-- ========================================== -->
+    <!-- Context: First screen where users select their preferred language -->
+    <!-- Audience: Children aged 5-9 and their families -->
+    <!-- Tone: Welcoming, encouraging, culturally respectful -->
+    <!-- Language: Aymara (Aymar aru) -->
+
     <string name="language_selection_welcome">¡Suma purinipxta Samiyuraru!</string>
     <string name="language_selection_subtitle">Aruma ajllim yapu sarnaqäwima qalltañataki</string>
-    <string name="language_selection_helper">Akxa qhipürux mayjt'ayasmawa</string>
+    <string name="language_selection_helper">Akxa qhipürux mayjt\'ayasmawa</string>
+
+    <!-- ========================================== -->
+    <!-- MAIN NAVIGATION AND INTERFACE             -->
+    <!-- ========================================== -->
+    <!-- Context: Core navigation elements and main interface components -->
+    <!-- Purpose: Help children navigate the app confidently -->
 
     <string name="header_plants">ALI MASINAKA</string>
     <string name="menu_description">Menú</string>
     <string name="previous_buddy">Nayrïr masi</string>
     <string name="next_buddy">Jutïr masi</string>
 
+    <!-- ========================================== -->
+    <!-- BUDDY STATUS AND MESSAGES                 -->
+    <!-- ========================================== -->
+    <!-- Context: Status updates and emotional connection with plant buddy -->
+    <!-- Purpose: Create caring relationship between child and virtual plant -->
+    <!-- Tone: Nurturing, positive, encouraging -->
+
     <string name="buddy_status_message">%1$s-maxa %2$s ukhamawa</string>
-    <string name="default_buddy_name">Jisk'a Masija</string>
-    <string name="status_happy">kusisita k'umarita</string>
+    <string name="default_buddy_name">Jisk\'a Masija</string>
+    <string name="status_happy">kusisita k\'umarita</string>
     <string name="status_thirsty">juka pharjatawa</string>
     <string name="status_needs_attention">uñjañama munistu</string>
     <string name="status_sleeping">jatha ukham ikiwayki</string>
 
+    <!-- ========================================== -->
+    <!-- PLANT GROWTH STAGES                       -->
+    <!-- ========================================== -->
+    <!-- Context: Describing different stages of plant development -->
+    <!-- Purpose: Educational content about plant life cycles -->
+    <!-- Tone: Wonder-filled, educational, celebratory -->
+
     <string name="stage_seed">%1$s-xa jatha ukham ikiwayki</string>
-    <string name="stage_sprouting">¡%1$s-xa ch'ixintaskiwa!</string>
-    <string name="stage_seedling">%1$s-na jisk'a laphinakapaxa utjiwa</string>
-    <string name="stage_growing">%1$s-xa juk'ampi jach'a ch'amanistiwa</string>
-    <string name="stage_mature">%1$s-xa apthapiñatakiw jak'ankxi</string>
-    <string name="stage_harvest">¡%1$s-xa apthapiñatakiw wakicht'ata!</string>
+    <string name="stage_sprouting">¡%1$s-xa ch\'ixintaskiwa!</string>
+    <string name="stage_seedling">%1$s-na jisk\'a laphinakapaxa utjiwa</string>
+    <string name="stage_growing">%1$s-xa juk\'ampi jach\'a ch\'amanistiwa</string>
+    <string name="stage_mature">%1$s-xa apthapiñatakiw jak\'ankxi</string>
+    <string name="stage_harvest">¡%1$s-xa apthapiñatakiw wakicht\'ata!</string>
+
+    <!-- ========================================== -->
+    <!-- INTERACTIVE ACTIONS AND BUTTONS           -->
+    <!-- ========================================== -->
+    <!-- Context: Actions children can take to care for their plant buddy -->
+    <!-- Purpose: Encourage real-world gardening behaviors -->
+    <!-- Tone: Action-oriented, encouraging, fun -->
 
     <string name="label_i_want">Naya muntha</string>
     <string name="label_plant_analysis">Ali Uñakipaña</string>
@@ -35,59 +70,115 @@
     <string name="check_growth">Jilatawip uñakipaña</string>
     <string name="button_info_text">Masijata ukatsti jiltañapatakix amuyunakampi</string>
 
+    <!-- ========================================== -->
+    <!-- CARE ACTIVITY FEEDBACK MESSAGES           -->
+    <!-- ========================================== -->
+    <!-- Context: Positive reinforcement after caring actions -->
+    <!-- Purpose: Celebrate child\'s nurturing behaviors -->
+    <!-- Tone: Celebratory, warm, affirming -->
+
     <string name="buddy_watered_message">¡Wali lurtaxa! ¡%1$s-x muxsa uma muni!</string>
-    <string name="buddy_sunlight_message">¡%1$s-x junt'u Inti qhanaruw muni!</string>
-    <string name="buddy_lab_analysis_message">Laboratorion %1$s uñakipasina. ¡Kuna mayjt'äwinakapsa thaqhasina!</string>
+    <string name="buddy_sunlight_message">¡%1$s-x junt\'u Inti qhanaruw muni!</string>
+    <string name="buddy_lab_analysis_message">Laboratorion %1$s uñakipasina. ¡Kuna mayjt\'äwinakapsa thaqhasina!</string>
     <string name="buddy_info_message">¡Masimaxa wali kusisitaw jumatampi!</string>
     <string name="good_job">¡Wali lurtaxa!</string>
     <string name="keep_it_up">¡Masimaru wali uñjaskakim!</string>
     <string name="patient_gardener">¡Wali yapu uywiriruw tukustaxa!</string>
     <string name="buddy_loves_you">¡Masimaxa wali kusisitaw jumatampi!</string>
 
-    <string name="analysis_seed_question">¡Chiqpach alima uñjiri saram! ¿Laq'at jisk'a ch'ixintir uñjtati?</string>
-    <string name="analysis_sprouting_question">¡Chiqpach %1$s-maru wali uñjam! ¿Qawqha jisk'a laphinak jakhsma?</string>
-    <string name="analysis_seedling_question">¡Chiqpach alima uñjam! ¿Qawqha jach'atakisa %1$s-xa? ¡Luk'anamampi tupum!</string>
+    <!-- ========================================== -->
+    <!-- OBSERVATION AND ANALYSIS QUESTIONS        -->
+    <!-- ========================================== -->
+    <!-- Context: Encouraging scientific observation of plants -->
+    <!-- Purpose: Develop observation skills and scientific thinking -->
+    <!-- Tone: Curious, encouraging, educational -->
+
+    <string name="analysis_seed_question">¡Chiqpach alima uñjiri saram! ¿Laq\'at jisk\'a ch\'ixintir uñjtati?</string>
+    <string name="analysis_sprouting_question">¡Chiqpach %1$s-maru wali uñjam! ¿Qawqha jisk\'a laphinak jakhsma?</string>
+    <string name="analysis_seedling_question">¡Chiqpach alima uñjam! ¿Qawqha jach\'atakisa %1$s-xa? ¡Luk\'anamampi tupum!</string>
     <string name="analysis_growing_question">¡Uñakipañ pacha! ¿%1$s-n laphinakapax jilxattaski?</string>
-    <string name="analysis_mature_question">¡Wali uñjam! ¿%1$s-xa apthapiñatakix wakicht'atati?</string>
+    <string name="analysis_mature_question">¡Wali uñjam! ¿%1$s-xa apthapiñatakix wakicht\'atati?</string>
     <string name="analysis_harvest_question">¡Wali suma! ¡%1$s-xa apthapiñatakiw sistu! ¿Kunjamsa uñjasi?</string>
-    <string name="analysis_default_question">%1$s-aru wali uñjam. ¿Kuna mayjt'äwsa uñjtati?</string>
+    <string name="analysis_default_question">%1$s-aru wali uñjam. ¿Kuna mayjt\'äwsa uñjtati?</string>
     <string name="analysis_completed">¡Wali suma uñjaña! ¡Chiqpach ali yatxatiriruw tukustaxa!</string>
-    <string name="observation_prompt">%1$s-aru wali uñjam. ¿Kuna mayjt'äwsa uñjtati?</string>
+    <string name="observation_prompt">%1$s-aru wali uñjam. ¿Kuna mayjt\'äwsa uñjtati?</string>
     <string name="growth_celebration">¡Wali suma! ¡%1$s-xa wasürupat jilxattanawa!</string>
 
+    <!-- ========================================== -->
+    <!-- STORY AND WELCOME EXPERIENCE              -->
+    <!-- ========================================== -->
+    <!-- Context: Opening story that sets the magical, nurturing tone -->
+    <!-- Purpose: Create emotional connection and narrative context -->
+    <!-- Tone: Storytelling, magical, inviting -->
+
     <string name="welcome_title">¡Yapu Sarnaqäwimaru Suma Purinipxta!</string>
-    <string name="story_image_description">Mä siq'ita siwsawitaki</string>
+    <string name="story_image_description">Mä siq\'ita siwsawitaki</string>
     <string name="story_placeholder_text">Mä urux, janiw jaya yapunxa...</string>
     <string name="button_continue">Sarkakim</string>
     <string name="naming_ceremony_title">Ali Masimaru Suticham</string>
     <string name="naming_prompt">¿Kuna suti %1$s masimaru uchasma?</string>
     <string name="naming_prompt_radish">¿Kuna suti rabanu masimaru uchasma?</string>
     <string name="naming_prompt_lettuce">¿Kuna suti lechuga masimaru uchasma?</string>
-    <string name="name_hint">Mä sapa suti qillqt'am</string>
+    <string name="name_hint">Mä sapa suti qillqt\'am</string>
     <string name="naming_confirm">¡Wali suma! ¡%1$s-ru aruntam!</string>
     <string name="button_start_adventure">Sarnaqäwi Qalltam</string>
 
+    <!-- ========================================== -->
+    <!-- HARVEST CELEBRATION                       -->
+    <!-- ========================================== -->
+    <!-- Context: Celebrating successful plant growth and harvest -->
+    <!-- Purpose: Reward patience and consistent care -->
+    <!-- Tone: Celebratory, proud, accomplished -->
+
     <string name="harvest_ready_title">¡Apthapiñ Pacha!</string>
-    <string name="harvest_ready_message">%1$s-xa apthapiñatakiw wakicht'ata. ¡Wali suma lurtaxa!</string>
-    <string name="harvest_instructions">Juk'at juk'ata %1$s-ru laq'at apsuñani</string>
-    <string name="harvest_celebration">¡Jallälla! ¡%1$s-ru jisk'a jathat jiltayta!</string>
+    <string name="harvest_ready_message">%1$s-xa apthapiñatakiw wakicht\'ata. ¡Wali suma lurtaxa!</string>
+    <string name="harvest_instructions">Juk\'at juk\'ata %1$s-ru laq\'at apsuñani</string>
+    <string name="harvest_celebration">¡Jallälla! ¡%1$s-ru jisk\'a jathat jiltayta!</string>
     <string name="watered_confirmation">¡Wali lurtaxa! ¡%1$s-x muxsa uma muni!</string>
+
+    <!-- ========================================== -->
+    <!-- PLANT TYPES AND COMPANION REFERENCES      -->
+    <!-- ========================================== -->
+    <!-- Context: Specific plant varieties available in the app -->
+    <!-- Purpose: Create familiarity with common garden plants -->
+    <!-- Note: Plant names are culturally adapted where appropriate -->
 
     <string name="plant_type_radish">rabanu</string>
     <string name="plant_type_lettuce">lechuga</string>
     <string name="my_radish_buddy">Rabanu Masija</string>
     <string name="my_lettuce_buddy">Lechuga Masija</string>
 
+    <!-- ========================================== -->
+    <!-- GENTLE REMINDERS AND CARE SUGGESTIONS     -->
+    <!-- ========================================== -->
+    <!-- Context: Subtle prompts for plant care without being demanding -->
+    <!-- Purpose: Encourage consistent care habits -->
+    <!-- Tone: Gentle, suggestive, never demanding -->
+
     <string name="gentle_reminder_title">Masimaxa amtistu</string>
-    <string name="gentle_reminder_message">%1$s-xa jichhüru tump'asirita muniristma</string>
+    <string name="gentle_reminder_message">%1$s-xa jichhüru tump\'asirita muniristma</string>
     <string name="water_reminder">%1$s-xa juka pharjatawa</string>
+
+    <!-- ========================================== -->
+    <!-- CARE ASSISTANCE AND GUIDANCE              -->
+    <!-- ========================================== -->
+    <!-- Context: Helpful suggestions when plants need attention -->
+    <!-- Purpose: Teach proper plant care techniques -->
+    <!-- Tone: Helpful, educational, encouraging -->
 
     <string name="buddy_needs_help">Masimaxa juka yanapa muni</string>
     <string name="care_suggestion">%1$s-ru juka uma churam, qharürusti mayampi uñakipam</string>
-    <string name="patience_message">Yapunakaxa suyäwi yatichistu. ¡Wali kunanakaxa juk'at juk'atawa!</string>
+    <string name="patience_message">Yapunakaxa suyäwi yatichistu. ¡Wali kunanakaxa juk\'at juk\'atawa!</string>
+
+    <!-- ========================================== -->
+    <!-- SETTINGS AND SYSTEM MESSAGES              -->
+    <!-- ========================================== -->
+    <!-- Context: App settings and system-level communications -->
+    <!-- Purpose: Provide clear, functional interface elements -->
+    <!-- Tone: Clear, simple, functional -->
 
     <string name="settings_title">Wakichäwinaka</string>
-    <string name="feature_coming_soon">¡Juk'ampinisti!</string>
+    <string name="feature_coming_soon">¡Juk\'ampinisti!</string>
     <string name="buddy_avatar_description">Masina uñnaqapa, kunjamsa jikxatasi uk uñachayasa</string>
 
 </resources>
