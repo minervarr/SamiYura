@@ -1,18 +1,23 @@
 package com.nava.samiyuri;
 
+// ADD THIS IMPORT for edge-to-edge handling
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
 // Android framework imports for basic app functionality
-import androidx.appcompat.app.AppCompatActivity;  // Base class for activities with modern features
-import androidx.lifecycle.ViewModelProvider;       // For creating ViewModel instances
-import android.os.Bundle;                        // For saving/restoring activity state
-import android.view.View;                        // For handling click events
-import android.widget.Toast;                     // For showing user feedback messages
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 // Project-specific imports
-import com.nava.samiyuri.databinding.ActivityMainBinding;  // Auto-generated binding for layout
-import com.nava.samiyuri.model.Plant;                     // Plant model for data types
-import com.nava.samiyuri.model.BuddyMessageEvent;         // NEW: Message event data class
-import com.nava.samiyuri.model.BuddyMessageType;          // NEW: Message type enum
-import com.nava.samiyuri.viewmodel.PlantViewModel;         // Our ViewModel for business logic
+import com.nava.samiyuri.databinding.ActivityMainBinding;
+import com.nava.samiyuri.model.Plant;
+import com.nava.samiyuri.model.BuddyMessageEvent;
+import com.nava.samiyuri.model.BuddyMessageType;
+import com.nava.samiyuri.viewmodel.PlantViewModel;
 
 /**
  * MainActivity - The "Buddy Dashboard" UI layer of the Samiyura app (MVVM Pattern)
@@ -54,25 +59,34 @@ public class MainActivity extends AppCompatActivity {
      * 3. Set up LiveData observers for reactive UI updates
      * 4. Configure user interaction listeners
      */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // STEP 1: Set up the user interface using View Binding
-        // This inflates (creates) all UI components from the XML layout file
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        // STEP 2: Initialize ViewModel using ViewModelProvider
-        // ViewModelProvider ensures the ViewModel survives configuration changes
+        // --- START: CORRECTED EDGE-TO-EDGE LAYOUT CODE ---
+        ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
+            // FIX: Get the insets for the system bars. This returns an 'Insets' object.
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+
+            // FIX: Use the 'left', 'top', 'right', and 'bottom' properties from the Insets object.
+            // The previous "Cannot resolve symbol" error happened because we were trying
+            // to access these properties from the wrong object. This is the correct way.
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+
+            // Return the insets so the system can process them.
+            return insets;
+        });
+        // --- END: CORRECTED EDGE-TO-EDGE LAYOUT CODE ---
+
         plantViewModel = new ViewModelProvider(this).get(PlantViewModel.class);
-
-        // STEP 3: Set up LiveData observers for reactive UI updates
         setupLiveDataObservers();
-
-        // STEP 4: Set up user interaction listeners
         setupBuddyCareListeners();
     }
+
+
 
     /**
      * Sets up LiveData observers for reactive UI updates
@@ -232,19 +246,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Plant Analysis Button - Interactive survey for Observer's Journal
-        binding.buttonAnalyzePlant.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                plantViewModel.startPlantAnalysis();
-            }
-        });
-
         // Sunlight Button - Positive reinforcement care action
         binding.buttonSunlight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 plantViewModel.giveSunlightToBuddy();
+            }
+        });
+
+        // Plant Analysis Button - Interactive survey for Observer's Journal
+        binding.buttonAnalyzePlant.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                plantViewModel.startPlantAnalysis();
             }
         });
 
