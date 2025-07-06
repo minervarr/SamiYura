@@ -5,7 +5,7 @@
     <!-- APP METADATA & BRANDING                   -->
     <!-- ========================================== -->
     <!-- Note for translator: "Samiyura" is the app name and should NOT be translated -->
-    <string name="app_name">Samiyura</string>
+    <string name="app_name" translatable="false">Samiyura</string>
 
     <!-- ========================================== -->
     <!-- LANGUAGE SELECTION SCREEN                 -->
@@ -211,6 +211,24 @@
     <string name="buddy_avatar_description">Buddy avatar showing current mood</string>
 
     <!-- ========================================== -->
+    <!-- LANGUAGE SELECTION SCREEN                 -->
+    <!-- ========================================== -->
+    <!-- Context: First screen users see when opening the app for the first time -->
+    <!-- Audience: Children aged 5-9 and their parents -->
+    <!-- Tone: Welcoming, friendly, encouraging -->
+    <!-- Purpose: Help families choose the most comfortable language for their garden journey -->
+
+
+    <!-- Language names for buttons - these should NOT be translated -->
+    <!-- They appear as native language names to help users identify their preferred language -->
+    <!-- Format: Native name (English clarification) for accessibility -->
+    <string name="language_english" translatable="false">English</string>
+    <string name="language_spanish" translatable="false">Español (Spanish)</string>
+    <string name="language_quechua" translatable="false">Runasimi (Quechua)</string>
+    <string name="language_aymara" translatable="false">Aymar aru (Aymara)</string>
+    <string name="language_ashaninka" translatable="false">Ashaninka</string>
+
+    <!-- ========================================== -->
     <!-- TRANSLATOR NOTES                          -->
     <!-- ========================================== -->
     <!--
@@ -236,5 +254,6 @@
     - Always frame plant care as positive, never as obligation
     - Celebrate small achievements enthusiastically
     -->
+
 
 </resources>

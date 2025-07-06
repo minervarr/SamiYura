@@ -1,4 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Samiyura</string>
+
+    <string name="language_selection_welcome">¡Te damos la bienvenida a Samiyura!</string>
+
+    <string name="language_selection_subtitle">Elige tu idioma para comenzar tu aventura en el jardín</string>
+
+    <string name="language_selection_helper">Puedes cambiar esto más tarde en los ajustes</string>
+
+    <string name="header_plants">PLANTITAS</string>
+
+    <string name="menu_description">Menú</string>
+    <string name="previous_buddy">Compañera anterior</string>
+    <string name="next_buddy">Siguiente compañera</string>
+
+    <string name="buddy_status_message">Tu %1$s está %2$s</string>
+
+    <string name="default_buddy_name">Mi Pequeña Compañera</string>
+
+    <string name="status_happy">feliz y saludable</string>
+    <string name="status_thirsty">con un poquito de sed</string>
+    <string name="status_needs_attention">necesitando mucho tu cuidado</string>
+    <string name="status_sleeping">durmiendo tranquilamente como una semillita</string>
+
+    <string name="stage_seed">%1$s está durmiendo como una semillita</string>
+    <string name="stage_sprouting">¡%1$s está empezando a brotar!</string>
+    <string name="stage_seedling">%1$s tiene hojitas bebés</string>
+    <string name="stage_growing">%1$s está creciendo más grande y fuerte</string>
+    <string name="stage_mature">%1$s ya casi está lista para la cosecha</string>
+    <string name="stage_harvest">¡%1$s está lista para ser cosechada!</string>
+
+    <string name="label_i_want">Quiero</string>
+    <string name="label_plant_analysis">Análisis de Planta</string>
+
+    <string name="water_buddy">Regar a mi Compañera</string>
+    <string name="observe_buddy">Ver a mi Compañera</string>
+    <string name="care_for_buddy">Cuidar a mi Compañera</string>
+    <string name="give_sunlight">Darle luz del sol</string>
+    <string name="analyze_plant">Analizar planta</string>
+    <string name="analyze_plant_lab">Analizar en el laboratorio</string>
+    <string name="check_growth">Revisar crecimiento</string>
+
+    <string name="button_info_text">Todo sobre mi compañera y consejos para crecer</string>
+
+    <string name="buddy_watered_message">¡Excelente trabajo! ¡A %1$s le encanta el agua fresca!</string>
+    <string name="buddy_sunlight_message">¡A %1$s le encanta la cálida luz del sol!</string>
+    <string name="buddy_lab_analysis_message">Analizando a %1$s en el laboratorio. ¡Buscando cualquier cambio!</string>
+    <string name="buddy_info_message">¡Tu compañera tiene suerte de tenerte!</string>
+
+    <string name="good_job">¡Excelente trabajo!</string>
+    <string name="keep_it_up">¡Sigue cuidando bien a tu compañera!</string>
+    <string name="patient_gardener">¡Te estás convirtiendo en un jardinero maravilloso!</string>
+    <string name="buddy_loves_you">¡Tu compañera tiene suerte de tenerte!</string>
+
+    <string name="analysis_seed_question">¡Ve a ver tu planta de verdad! ¿Ves algún brote pequeñito saliendo de la tierra?</string>
+    <string name="analysis_sprouting_question">¡Mira de cerca a tu %1$s de verdad! ¿Cuántas hojitas puedes contar?</string>
+    <string name="analysis_seedling_question">¡Revisa tu planta de verdad! ¿Qué tan alta está %1$s ahora? ¡Usa tu dedo para medir!</string>
+    <string name="analysis_growing_question">¡Hora de analizar! ¿Las hojas de %1$s se están haciendo más grandes?</string>
+    <string name="analysis_mature_question">¡Mira con atención! ¿Ya está %1$s lista para cosechar?</string>
+    <string name="analysis_harvest_question">¡Increíble! ¡%1$s parece lista para cosechar! ¿Cómo se ve?</string>
+    <string name="analysis_default_question">Mira de cerca a %1$s. ¿Ves algún cambio?</string>
+    <string name="analysis_completed">¡Gran observación! ¡Te estás convirtiendo en un verdadero científico de plantas!</string>
+
+    <string name="observation_prompt">Mira de cerca a %1$s. ¿Ves algún cambio?</string>
+    <string name="growth_celebration">¡Asombroso! ¡%1$s ha crecido desde ayer!</string>
+
+    <string name="welcome_title">¡Bienvenido a Tu Aventura en el Jardín!</string>
+    <string name="story_image_description">Una ilustración para la historia</string>
+    <string name="story_placeholder_text">Había una vez, en un jardín no muy lejano…</string>
+    <string name="button_continue">Continuar</string>
+
+    <string name="naming_ceremony_title">Ponle Nombre a tu Planta Compañera</string>
+    <string name="naming_prompt">¿Qué nombre te gustaría ponerle a tu compañera %1$s?</string>
+    <string name="naming_prompt_radish">¿Qué nombre te gustaría ponerle a tu compañero rábano?</string>
+    <string name="naming_prompt_lettuce">¿Qué nombre te gustaría ponerle a tu compañera lechuga?</string>
+    <string name="name_hint">Escribe un nombre especial</string>
+    <string name="naming_confirm">¡Perfecto! ¡Saluda a %1$s!</string>
+    <string name="button_start_adventure">Comenzar Aventura</string>
+
+    <string name="harvest_ready_title">¡Hora de Cosechar!</string>
+    <string name="harvest_ready_message">%1$s está lista para ser cosechada. ¡Hiciste un trabajo increíble!</string>
+    <string name="harvest_instructions">Saca suavemente a %1$s de la tierra</string>
+    <string name="harvest_celebration">¡Felicitaciones! ¡Hiciste crecer a %1$s desde una pequeña semillita!</string>
+    <string name="watered_confirmation">¡Excelente trabajo! ¡A %1$s le encanta el agua fresca!</string>
+
+    <string name="plant_type_radish">rábano</string>
+    <string name="plant_type_lettuce">lechuga</string>
+    <string name="my_radish_buddy">Mi Compañero Rábano</string>
+    <string name="my_lettuce_buddy">Mi Compañera Lechuga</string>
+
+    <string name="gentle_reminder_title">Tu compañera te extraña</string>
+    <string name="gentle_reminder_message">A %1$s le encantaría que la visites hoy</string>
+    <string name="water_reminder">%1$s tiene un poquito de sed</string>
+
+    <string name="buddy_needs_help">Tu compañera necesita un poco de ayuda</string>
+    <string name="care_suggestion">Intenta darle a %1$s un poco de agua y revisa de nuevo mañana</string>
+    <string name="patience_message">Los jardines nos enseñan a tener paciencia. ¡Las cosas buenas toman su tiempo!</string>
+
+    <string name="settings_title">Ajustes</string>
+    <string name="feature_coming_soon">¡Próximamente!</string>
+
+    <string name="buddy_avatar_description">Avatar de la compañera mostrando su estado de ánimo actual</string>
+
 </resources>

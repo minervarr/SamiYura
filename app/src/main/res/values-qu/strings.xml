@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="language_selection_welcome">¡Allin hamusqa Samiyuraman!</string>
+    <string name="language_selection_subtitle">Simiykita akllay chakraykipi puriyta qallarinaykipaq</string>
+    <string name="language_selection_helper">Kaytaqa qhipamanpas hukchayta atinki</string>
+
+    <string name="header_plants">YURA MASIKUNA</string>
+    <string name="menu_description">Menú</string>
+    <string name="previous_buddy">Ñawpaq masi</string>
+    <string name="next_buddy">Qatiq masi</string>
+
+    <string name="buddy_status_message">%1$s-ykiqa %2$s kachkan</string>
+    <string name="default_buddy_name">Huch'uy Masiy</string>
+    <string name="status_happy">kusisqa qhalin kachkan</string>
+    <string name="status_thirsty">pisi ch'akisqa kachkan</string>
+    <string name="status_needs_attention">qhawarinaykita munan</string>
+    <string name="status_sleeping">muhu hina puñuchkan</string>
+
+    <string name="stage_seed">%1$s-qa muhu hina puñuchkan</string>
+    <string name="stage_sprouting">¡%1$s-qa ch'ikchimuchkanña!</string>
+    <string name="stage_seedling">%1$s-pa huch'uy raphichankuna kapun</string>
+    <string name="stage_growing">%1$s-qa hatunyachkan sinch'iyachkanpas</string>
+    <string name="stage_mature">%1$s-qa pallanapaqña kachkan</string>
+    <string name="stage_harvest">¡%1$s-qa pallanapaqña!</string>
+
+    <string name="label_i_want">Munani</string>
+    <string name="label_plant_analysis">Yura Qhaway</string>
+    <string name="water_buddy">Masiyta Qarpay</string>
+    <string name="observe_buddy">Masiyta Qhaway</string>
+    <string name="care_for_buddy">Masiyta Uywariy</string>
+    <string name="give_sunlight">Intiwan k'anchay</string>
+    <string name="analyze_plant">Yurata qhaway</string>
+    <string name="analyze_plant_lab">Laboratoriopi qhaway</string>
+    <string name="check_growth">Wiñayninta qhaway</string>
+    <string name="button_info_text">Masiymanta willakuykuna wiñananpaqpis</string>
+
+    <string name="buddy_watered_message">¡Allin llamk'asqa! ¡%1$s-qa misk'i unuta munan!</string>
+    <string name="buddy_sunlight_message">¡%1$s-manqa Intipa q'uñiynin anchatapunin gustan!</string>
+    <string name="buddy_lab_analysis_message">Laboratoriopi %1$s-ta qhawaspa. ¡Ima hukmanyasqatapas maskhaspa!</string>
+    <string name="buddy_info_message">¡Masiykiqa ancha kusisqan qanwan kaspa!</string>
+    <string name="good_job">¡Allin llamk'asqa!</string>
+    <string name="keep_it_up">¡Masiykita allinta uywaspa qatipay!</string>
+    <string name="patient_gardener">¡Ancha allin chakra llamk'aqmanmi tukuchkanki!</string>
+    <string name="buddy_loves_you">¡Masiykiqa ancha kusisqan qanwan kaspa!</string>
+
+    <string name="analysis_seed_question">¡Chiqap yuraykita qhawaq riy! ¿Allpamanta huch'uy ch'ikchikuna rikhurimusqanta rikuchkankichu?</string>
+    <string name="analysis_sprouting_question">¡Chiqap %1$s-ykiykita allinta qhaway! ¿Hayk'a huch'uy raphichakunata yupayta atinki?</string>
+    <string name="analysis_seedling_question">¡Chiqap yuraykita qhaway! ¿Hayk'a sayayniyuqñataq %1$s kachkan? ¡Ruk'anaykiwan tupuway!</string>
+    <string name="analysis_growing_question">¡Qhawanapaq pacha! ¿%1$s-pa raphinkuna hatunyachkanchu?</string>
+    <string name="analysis_mature_question">¡Allinta qhaway! ¿%1$s-qa pallanapaqñachu kachkan?</string>
+    <string name="analysis_harvest_question">¡Ancha allin! ¡%1$s-qa pallanapaq hinan kachkan! ¿Imaynan rikch'akun?</string>
+    <string name="analysis_default_question">%1$s-ta allinta qhaway. ¿Ima hukmanyasqatapas rikuchkankichu?</string>
+    <string name="analysis_completed">¡Ancha allin qhaway! ¡Chiqap yura yachaqmanmi tukuchkanki!</string>
+    <string name="observation_prompt">%1$s-ta allinta qhaway. ¿Ima hukmanyasqatapas rikuchkankichu?</string>
+    <string name="growth_celebration">¡Ancha allin! ¡%1$s-qa qayna p'unchawmanta wiñanñan!</string>
+
+    <string name="welcome_title">¡Chakraykipi Puriykyman Allin Hamusqa!</string>
+    <string name="story_image_description">Huk siq'i willakuypaq</string>
+    <string name="story_placeholder_text">Huk p'unchawsi, mana karu chakrapis...</string>
+    <string name="button_continue">Qatipay</string>
+    <string name="naming_ceremony_title">Yura Masiykipaq Sutita Churay</string>
+    <string name="naming_prompt">¿Ima sutintan %1$s masiykiman churayta munanki?</string>
+    <string name="naming_prompt_radish">¿Ima sutintan rabanu masiykiman churayta munanki?</string>
+    <string name="naming_prompt_lettuce">¿Ima sutintan lechuga masiykiman churayta munanki?</string>
+    <string name="name_hint">Huk sapaq sutita qillqay</string>
+    <string name="naming_confirm">¡Ancha allin! ¡%1$s-man napaykuy!</string>
+    <string name="button_start_adventure">Puriyta Qallariy</string>
+
+    <string name="harvest_ready_title">¡Pallana Pacha!</string>
+    <string name="harvest_ready_message">%1$s-qa pallanapaqñan kachkan. ¡Ancha allintan llamk'anki!</string>
+    <string name="harvest_instructions">Allillamanta %1$s-ta allpamanta hurquy</string>
+    <string name="harvest_celebration">¡Kusisunchis! ¡%1$s-taqa huch'uy muhullamantan wiñachinki!</string>
+    <string name="watered_confirmation">¡Allin llamk'asqa! ¡%1$s-qa misk'i unuta munan!</string>
+
+    <string name="plant_type_radish">rabanu</string>
+    <string name="plant_type_lettuce">lechuga</string>
+    <string name="my_radish_buddy">Rabanu Masiy</string>
+    <string name="my_lettuce_buddy">Lechuga Masiy</string>
+
+    <string name="gentle_reminder_title">Masiykiqa yuyarikusunki</string>
+    <string name="gentle_reminder_message">%1$s-qa kunan watukamusqaykita munachkan</string>
+    <string name="water_reminder">%1$s-qa pisi ch'akisqan kachkan</string>
+
+    <string name="buddy_needs_help">Masiykiqa pisillatan yanapata munan</string>
+    <string name="care_suggestion">Pisi unuta %1$s-man quriy, paqarintaq yapamanta qhaway</string>
+    <string name="patience_message">Chakrakunaqa suyayta yachachiwanchis. Allin kaqkunaqa pisi pisimantam!</string>
+
+    <string name="settings_title">Allichaykuna</string>
+    <string name="feature_coming_soon">¡Asllawanña!</string>
+    <string name="buddy_avatar_description">Masipa rikch'aynin, imayna kasqanta rikuchispa</string>
+
+</resources>

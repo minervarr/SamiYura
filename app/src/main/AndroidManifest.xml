@@ -13,6 +13,7 @@
         android:theme="@style/Theme.Samiyura"
         tools:targetApi="31">
 
+        <!-- Welcome Activity - First screen users see (splash screen) -->
         <activity
             android:name=".WelcomeActivity"
             android:exported="true">
@@ -22,10 +23,30 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".StoryActivity" />
-        <activity android:name=".NamingCeremonyActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SettingsActivity" />
+        <!-- Language Selection Activity - Choose preferred language for the app -->
+        <activity
+            android:name=".LanguageSelectionActivity"
+            android:exported="false" />
+
+        <!-- Story Activity - Introduction story and adventure setup -->
+        <activity
+            android:name=".StoryActivity"
+            android:exported="false" />
+
+        <!-- Naming Ceremony Activity - Name your plant buddies -->
+        <activity
+            android:name=".NamingCeremonyActivity"
+            android:exported="false" />
+
+        <!-- Main Activity - Core plant care and interaction hub -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <!-- Settings Activity - App configuration and preferences -->
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false" />
 
     </application>
 
