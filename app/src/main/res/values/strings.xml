@@ -21,13 +21,15 @@
 
     <string name="label_i_want">I want to</string>
     <string name="label_plant_analysis">Plant Analysis</string>
-    <string name="analyze_plant">Analyze plant</string>
+    <string name="analyze_plant">Give sunlight</string>
+    <string name="analyze_plant_lab">Analyze in lab</string>
     <string name="give_sunlight">Give sunlight</string>
     <string name="check_growth">Check growth</string>
     <string name="button_info_text">All about my buddy and growing tips</string>
 
     <string name="buddy_watered_message">Great job! %1$s loves the fresh water!</string>
     <string name="buddy_sunlight_message">%1$s loves the warm sunlight!</string>
+    <string name="buddy_lab_analysis_message">Analyzing %1$s in the lab. Looking for any changes!</string>
     <string name="buddy_info_message">Your buddy is lucky to have you!</string>
     <string name="feature_coming_soon">Coming soon!</string>
 
@@ -87,4 +89,5 @@
     <string name="story_image_description">An illustration for the story</string>
     <string name="story_placeholder_text">Once upon a time, in a garden not so far away...</string>
     <string name="button_continue">Continue</string>
+
 </resources>
